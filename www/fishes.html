@@ -480,6 +480,10 @@
         font-size: 1.8rem;
       }
     }
+    header {
+      position: relative;
+      padding-top: 50px;
+    }
   </style>
 </head>
 <body>
@@ -504,7 +508,7 @@
   <main>
     <div class="section">
       <div class="spelling-grid">
-        <button class="spelling-button" onclick="playSpelling('Crab')">
+        <button class="spelling-button" onclick="playSpelling('crab')">
           <img src="images/fishes/Crab.jpeg" alt="Crab" />
           <span>Crab</span>
         </button>
@@ -533,14 +537,14 @@
           <span>Prawn</span>
         </button>
         <button class="spelling-button" onclick="playSpelling('seahorse')">
-          <img src="images/fishes/Seahorse.jpeg" alt="Seahorse" />
+          <img src="images/fishes/seahorse.jpeg" alt="Seahorse" />
           <span>Seahorse</span>
         </button>
         <button class="spelling-button" onclick="playSpelling('octopus')">
           <img src="images/fishes/Octopus.jpeg" alt="Octopus" />
           <span>Octopus</span>
         </button>
-        <button class="spelling-button" onclick="playSpelling('Skater')">
+        <button class="spelling-button" onclick="playSpelling('skater')">
           <img src="images/fishes/Skater.jpeg" alt="Skater" />
           <span>Skater</span>
         </button>
@@ -548,11 +552,11 @@
           <img src="images/fishes/kingmackerel.jpeg" alt="king mackerel" />
           <span>King Mackerel</span>
         </button>
-        <button class="spelling-button" onclick="playSpelling('Sardine')">
+        <button class="spelling-button" onclick="playSpelling('sardine')">
           <img src="images/fishes/Sardine.jpeg" alt="Sardine" />
           <span>Sardine</span>
         </button>
-        <button class="spelling-button" onclick="playSpelling('Starfish')">
+        <button class="spelling-button" onclick="playSpelling('starfish')">
           <img src="images/fishes/starfish.jpeg" alt="Starfish" />
           <span>Starfish</span>
         </button>
@@ -578,7 +582,10 @@
       const popup = document.getElementById('spellingPopup');
       const popupImg = document.getElementById('popupImage');
       const popupLetters = document.getElementById('popupLetters');
-      const audioQueue = [...fish.split('').map(l => `sounds/letter sound/${l}.mp3`), `sounds/fish/${fish}.wav`];
+      //const audioQueue = [`sounds/fish/${fish.toLowerCase()}.wav`];
+      const audioQueue = [ ...fish.split('').map(l => `sounds/letter sound/${l.toLowerCase()}.mp3`),
+        `sounds/fish/${fish.toLowerCase()}.wav`
+      ];
       
       let index = 0;
       popup.style.display = 'flex';
@@ -604,7 +611,7 @@
         audio.play().catch(e => console.error("Playback error:", e));
         audio.onended = () => {
           index++;
-          setTimeout(playNextWithDelay, 300);
+          setTimeout(playNextWithDelay, 200);
         };
       }
       
