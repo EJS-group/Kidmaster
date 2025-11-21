@@ -39,9 +39,9 @@
     body {
       font-family: 'Fredoka', sans-serif;
       background: linear-gradient(#9dff00, #ff4a4a);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
       color: var(--text-light);
       transition: background 0.5s ease, color 0.5s ease;
       min-height: 100vh;
@@ -543,6 +543,11 @@
         height: 30px;
       }
     }
+
+    header {
+      position: relative;
+      padding-top: 50px;
+    }
   </style>
 </head>
 
@@ -568,83 +573,83 @@
   <main>
     <div class="section">
       <div class="spelling-grid">
-        <button class="spelling-button" onclick="playSpelling('apple')">
-          <img src="images/fruits/apple.png" alt="Apple" />
+        <button class="spelling-button" onclick="playSpelling('Apple')">
+          <img src="images/fruits/Apple.png" alt="Apple" />
           <span>Apple</span>
         </button>
-        <button class="spelling-button" onclick="playSpelling('orange')">
+        <button class="spelling-button" onclick="playSpelling('Orange')">
           <img src="images/fruits/Orange.png" alt="Orange" />
           <span>Orange</span>
         </button>
-        <button class="spelling-button" onclick="playSpelling('grapes')">
+        <button class="spelling-button" onclick="playSpelling('Grapes')">
           <img src="images/fruits/Grapes.png" alt="Grapes" />
           <span>Grapes</span>
         </button>
-        <button class="spelling-button" onclick="playSpelling('banana')">
+        <button class="spelling-button" onclick="playSpelling('Banana')">
           <img src="images/fruits/Banana.png" alt="Banana" />
           <span>Banana</span>
         </button>
-        <button class="spelling-button" onclick="playSpelling('mango')">
+        <button class="spelling-button" onclick="playSpelling('Mango')">
           <img src="images/fruits/Mango.png" alt="Mango" />
           <span>Mango</span>
         </button>
-        <button class="spelling-button" onclick="playSpelling('pineapple')">
+        <button class="spelling-button" onclick="playSpelling('Pineapple')">
           <img src="images/fruits/Pineapple.png" alt="Pineapple" />
           <span>Pineapple</span>
         </button>
-        <button class="spelling-button" onclick="playSpelling('watermelon')">
+        <button class="spelling-button" onclick="playSpelling('Watermelon')">
           <img src="images/fruits/Watermelon.png" alt="Watermelon" />
           <span>Watermelon</span>
         </button>
-        <button class="spelling-button" onclick="playSpelling('strawberry')">
+        <button class="spelling-button" onclick="playSpelling('Strawberry')">
           <img src="images/fruits/Strawberry.png" alt="Strawberry" />
           <span>Strawberry</span>
         </button>
-        <button class="spelling-button" onclick="playSpelling('blueberry')">
+        <button class="spelling-button" onclick="playSpelling('Blueberry')">
           <img src="images/fruits/Blueberry.png" alt="Blueberry" />
           <span>Blueberry</span>
         </button>
-        <button class="spelling-button" onclick="playSpelling('cherry')">
+        <button class="spelling-button" onclick="playSpelling('Cherry')">
           <img src="images/fruits/Cherry.png" alt="Cherry" />
           <span>Cherry</span>
         </button>
-        <button class="spelling-button" onclick="playSpelling('papaya')">
+        <button class="spelling-button" onclick="playSpelling('Papaya')">
           <img src="images/fruits/Papaya.png" alt="Papaya" />
           <span>Papaya</span>
         </button>
-        <button class="spelling-button" onclick="playSpelling('pomegranate')">
+        <button class="spelling-button" onclick="playSpelling('Pomegranate')">
           <img src="images/fruits/Pomegranate.png" alt="Pomegranate" />
           <span>Pomegranate</span>
         </button>
-        <button class="spelling-button" onclick="playSpelling('lemon')">
+        <button class="spelling-button" onclick="playSpelling('Lemon')">
           <img src="images/fruits/Lemon.png" alt="Lemon" />
           <span>Lemon</span>
         </button>
-        <button class="spelling-button" onclick="playSpelling('pear')">
+        <button class="spelling-button" onclick="playSpelling('Pear')">
           <img src="images/fruits/Pear.png" alt="Pear" />
           <span>Pear</span>
         </button>
-        <button class="spelling-button" onclick="playSpelling('kiwi')">
+        <button class="spelling-button" onclick="playSpelling('Kiwi')">
           <img src="images/fruits/Kiwi.png" alt="Kiwi" />
           <span>Kiwi</span>
         </button>
-        <button class="spelling-button" onclick="playSpelling('guava')">
+        <button class="spelling-button" onclick="playSpelling('Guava')">
           <img src="images/fruits/Guava.png" alt="Guava" />
           <span>Guava</span>
         </button>
-        <button class="spelling-button" onclick="playSpelling('plum')">
+        <button class="spelling-button" onclick="playSpelling('Plum')">
           <img src="images/fruits/Plum.png" alt="Plum" />
           <span>Plum</span>
         </button>
-        <button class="spelling-button" onclick="playSpelling('peach')">
+        <button class="spelling-button" onclick="playSpelling('Peach')">
           <img src="images/fruits/Peach.png" alt="Peach" />
           <span>Peach</span>
         </button>
-        <button class="spelling-button" onclick="playSpelling('avocado')">
+        <button class="spelling-button" onclick="playSpelling('Avocado')">
           <img src="images/fruits/Avocado.png" alt="Avocado" />
           <span>Avocado</span>
         </button>
-        <button class="spelling-button" onclick="playSpelling('fig')">
+        <button class="spelling-button" onclick="playSpelling('Fig')">
           <img src="images/fruits/Fig.png" alt="Fig" />
           <span>Fig</span>
         </button>
@@ -670,7 +675,14 @@
       const popup = document.getElementById('spellingPopup');
       const popupImg = document.getElementById('popupImage');
       const popupLetters = document.getElementById('popupLetters');
-      const audioQueue = [...fruit.split('').map(l => `sounds/letter sound/${l}.mp3`), `sounds/fruit name/${fruit}.mp3`];
+      // const audioQueue = [...fruit.split('').map(l => `sounds/letter sound/${l}.mp3`), `sounds/fruit name/${fruit}.mp3`];
+      const audioQueue = [
+        ...fruit
+          .split('')
+          .map(l => `sounds/letter sound/${l.toLowerCase()}.mp3`),
+        `sounds/fruit name/${fruit.toLowerCase()}.mp3`
+      ];
+
 
       let index = 0;
       popup.style.display = 'flex';
@@ -696,7 +708,7 @@
         audio.play().catch(e => console.error("Playback error:", e));
         audio.onended = () => {
           index++;
-          setTimeout(playNextWithDelay, 300);
+          setTimeout(playNextWithDelay, 200);
         };
       }
 
