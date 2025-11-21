@@ -344,10 +344,10 @@
     
     #popupLetters {
       font-size: 2rem;
-     background: linear-gradient(#2dcbef, #0c06bc);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
+      background: linear-gradient(#2dcbef, #0c06bc);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
       letter-spacing: 4px;
       margin-bottom: 1rem;
       font-weight: bold;
@@ -544,16 +544,16 @@
   <main>
     <div class="section">
       <div class="spelling-grid">
-        <button class="spelling-button" onclick="playSpelling('circle')">
-          <img src="images/shapes/circle.png" alt="Circle" />
+        <button class="spelling-button" onclick="playSpelling('Circle')">
+          <img src="images/shapes/Circle.png" alt="Circle" />
           <span>Circle</span>
         </button>
-        <button class="spelling-button" onclick="playSpelling('triangle')">
-          <img src="images/shapes/triangle.png" alt="Triangle" />
+        <button class="spelling-button" onclick="playSpelling('Triangle')">
+          <img src="images/shapes/Triangle.png" alt="Triangle" />
           <span>Triangle</span>
         </button>
-        <button class="spelling-button" onclick="playSpelling('square')">
-          <img src="images/shapes/square.png" alt="Square" />
+        <button class="spelling-button" onclick="playSpelling('Square')">
+          <img src="images/shapes/Square.png" alt="Square" />
           <span>Square</span>
         </button>
         <button class="spelling-button" onclick="playSpelling('Rectangle')">
@@ -647,6 +647,12 @@
         // } else {
         //   popupLetters.textContent = shape.toUpperCase();
         // }
+        
+        audio.onerror = () => {
+          console.error(`Failed to load audio: ${audioQueue[index]}`);
+          index++;
+          setTimeout(playNextWithDelay, 300);
+        };
         
         audio.play().catch(e => console.error("Playback error:", e));
         audio.onended = () => {
