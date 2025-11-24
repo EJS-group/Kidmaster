@@ -671,12 +671,12 @@
         lastTouchEnd = now;
       }, false);
       
-      // Prevent scrolling on touch move
-      document.addEventListener('touchmove', function(event) {
-        if (event.scale !== 1) {
-          event.preventDefault();
-        }
-      }, { passive: false });
+      // // Prevent scrolling on touch move
+      // document.addEventListener('touchmove', function(event) {
+      //   if (event.scale !== 1) {
+      //     event.preventDefault();
+      //   }
+      // }, { passive: false });
       
       // Lock orientation to portrait if on mobile
       if (window.screen.orientation) {
