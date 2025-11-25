@@ -11,8 +11,10 @@ xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0
     <allow-intent href="https://*/*" />
     <preference name="Orientation" value="default"/>
     <preference name="Fullscreen" value="true"/>
+    <preference name="AndroidWindowSplashScreenAnimatedIcon" value="www/res/kids-zoner-modified_imresizer.png"  density="mdpi"/>
     <platform name="android">
-    <allow-intent href="market:*"/>
+        <allow-intent href="market:*"/>
+        <icon src="www/res/kids-zoner-modified_imresizer.png" density="mdpi"/>
     </platform>
     <icon src="www/res/kids-zoner-modified_imresizer.png"/>
 </widget>
