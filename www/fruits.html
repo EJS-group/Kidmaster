@@ -507,7 +507,7 @@
       }
 
       .spelling-grid {
-        grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
         gap: 10px;
       }
 
@@ -685,7 +685,7 @@
 
       let index = 0;
       popup.style.display = 'flex';
-      popupImg.src = `images/fruits/${fruit}.png`;
+      popupImg.src = `images/fruits/${fruit.toLowerCase()}.png`;
       popupLetters.textContent = '';
 
       function playNextWithDelay() {
