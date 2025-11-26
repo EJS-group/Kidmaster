@@ -1,5 +1,3 @@
-GitHub Copilot Chat Assistant
-
 Here are concise Windows cmd steps to add a README.md to EJS-group/Kidmaster plus a sensible default README you can use.
 Tell me if you want me to commit it directly for you instead.
 
